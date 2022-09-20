@@ -1,14 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
+import Contador from './componenets/MeuComponente/Contador';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-       Ola mundo
-      </header>
-    </div>
+    <Contador/>
   );
 }
 
