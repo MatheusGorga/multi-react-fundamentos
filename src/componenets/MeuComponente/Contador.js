@@ -2,12 +2,12 @@ import { useState } from "react"
 import styles from './styles.module.css'
 
 
-export default function Contador() {
-  const [numero, setNumero] = useState(0)
+export default function Contador({valor, text}) {
+  const [numero, setNumero] = useState(valor)
   
    return (
       <div className={styles.contador}>
-        Numero: {numero} 
+        {text}: {numero} 
         <br/>
         <button  onClick={() => setNumero(numero + 1)}>
           +
