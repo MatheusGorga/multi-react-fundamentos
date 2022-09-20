@@ -12,6 +12,10 @@ export default function Contador({valor, text}) {
         <button  onClick={() => setNumero(numero + 1)}>
           +
         </button>
+
+        <button  onClick={() => setNumero(numero - 1)}>
+          -
+        </button>
       </div>
     )
 }
