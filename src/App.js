@@ -1,20 +1,20 @@
+import { useEffect } from 'react';
 import './App.css';
-import ListaCursos from './componenets/ListaCursos/ListaCursos';
-import Contador from './componenets/MeuComponente/Contador';
+import useOnlineStatus from './data/hooks/useOnlineStatus';
 
 function App() {
+  const isOnline = useOnlineStatus()
 
-  const valorInicial = 5;
-  const content = 'Numero escolhido'
+  useEffect(() => {
+    if (!isOnline) {
+      alert("Sua Conexão caiu")
+    }
+  }, [isOnline])
 
   return (
-    <>
-      <Contador valor={valorInicial} text={content} />
-      <hr />
-      <hr />
-      <ListaCursos />
-
-    </>
+    <div>
+      {isOnline ? 'disponivel' : 'off'}
+    </div>
   );
 }
 
